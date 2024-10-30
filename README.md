@@ -6,7 +6,8 @@ This dataset is a live capture of eight extended road-side units (eRSU). The dat
 attacks were collected on real infrastructure. It features captures of eight 
 multi-access edge computing (MEC) units in a distributed network. It was captured on
 the 22nd of July 2024, starting on the 21st at 20:00 CEST and ending on the 22nd at
-20:00 CEST.
+20:00 CEST. The dataset is split into the eight hosts. Each host contains CSV files with
+100.000 packets per file.
 
 ### Network Layout
 
