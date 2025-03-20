@@ -2,10 +2,6 @@
 
 This repository contains several datasets for use with the DAISY framework. 
 
-## Datasets for DAISY
-
-This repository contains several datasets designed for use with the DAISY framework. 
-
 ## 5G Communication Indicators Dataset (Jamming Dataset)
 
 This dataset includes the 5G communication monitoring indicators recorded throughout the project. The data was collected by our project partner HMF, including **DLLA** and **UE Link** data, and then processed and merged for further analysis.
