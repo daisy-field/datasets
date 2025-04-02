@@ -1,61 +1,37 @@
 # Datasets for DAISY
 
+> Datasets for the setting of **D**istributed, **A**nomaly-Based **I**ntrusion 
+> Detection in **S**ecurit**y**-Oriented Edge Computing Environments
+
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://github.com/daisy-field/datasets/blob/main/LICENSE.txt)
 
-This repository contains several datasets for use with the DAISY framework. 
+This repository contains several datasets for use with the DAISY framework, but also 
+any other approaches that follow a distributed approach for intrusion detection, both 
+anomaly- and misuse-based classification.
 
-## 5G Communication Indicators Dataset (Jamming Dataset)
+This is merely the overview of all the available datasets, for a more detailed 
+description, see the respective directory and README.
 
-This dataset includes the 5G communication monitoring indicators recorded throughout the project. The data was collected by our project partner HMF, including **DLLA** and **UE Link** data, and then processed and merged for further analysis.
+## [5G Communication Indicators Dataset (Jamming Dataset)](Jamming/README.md)
 
-### Available Data:
+This dataset includes the 5G communication monitoring indicators recorded throughout the 
+project. The data was collected by our project partner HMF, including **DLLA** and **UE 
+Link** data, and then processed and merged for further analysis.
 
-1. **`label_encoder.pkl`**:  
-   - The serialized encoder for the labels. This file is used to convert categorical labels into numerical values.
+## [CIC IDS2017](CIC_IDS2017/README.md)
 
-2. **`merged_data.csv`**:  
-   - The raw merged dataset, combining both **DLLA** and **UE Link** data. This is the initial dataset obtained after merging.
+This dataset is a transformation of the CIC-IDS2017 dataset 
+(https://www.unb.ca/cic/datasets/ids-2017.html). It was split using the 
+notebooks in the same directory into multiple CSV files.
 
-3. **`merged_data_preprocessed.csv`**:  
-   - The preprocessed dataset, excluding data scaling. This version of the data has been cleaned and prepared, but the values have not been normalized or scaled.
-
-4. **`merged_data_preprocessed_only_one_label.csv`**:  
-   - A version of the dataset that contains only the label `Jammer_On`. Other attributes such as bandwidth, frequency, and signal strength are also included. This file is created for specific analyses where only this label is relevant.
-
-5. **`merged_data_preprocessed_only_one_label_extended.csv`**:  
-   - This version includes repeated records of normal traffic to simulate additional training data, thus extending the set of training examples for improved analysis.
-
-### Further Notes:
-
-- All files have been carefully prepared to ensure easy handling and analysis of the 5G communication data.
-- The dataset can be utilized for various tasks within 5G communication monitoring and analysis, such as detecting disturbances (e.g., jamming) or modeling network behavior.
-
-## CIC IDS2017
-
-This dataset is the original CICIDS2017 dataset. It was split using the code in the
-same directory into multiple CSV files. The original Dataset can be found here:
-https://www.unb.ca/cic/datasets/ids-2017.html
-
-Iman Sharafaldin, Arash Habibi Lashkari, and Ali A. Ghorbani, “Toward Generating a New 
-Intrusion Detection Dataset and Intrusion Traffic Characterization”, 4th International 
-Conference on Information Systems Security and Privacy (ICISSP), Portugal, January 2018
-
-## V2X 2023-03-06
+## [V2X 2023-03-06](v2x_2023-03-06/README.md)
 
 This dataset was generated as a proof of concept for a master's thesis. It features
 two V2X communication devices and is a capture of real network traffic. The two
 hosts use the identifiers 2 and 5, as they are part of a bigger network with 
-several additional machines. The following attacks are part of this dataset:
+several additional machines.
 
-| Attack                                  | Machine | Start Time | End Time | IP Addresses                     | Protocols    |
-|-----------------------------------------|---------|------------|----------|----------------------------------|--------------|
-| Tool Installation                       | 5       | 12:34:17   | 12:40:28 | 192.168.213.86 and 185.0.0.0/8   | TCP and HTTP |
-| SSH Brute Force (outgoing)              | 5       | 12:49:04   | 13:23:16 | 192.168.213.86 and 192.168.230.3 | TCP and SSH  |
-| SSH Brute Force (incoming)              | 2       | 12:49:04   | 13:23:16 | 192.168.230.3 and 130.149.98.119 | TCP and SSH  |
-| Privilege Escalation over SSH           | 5       | 13:25:37   | 13:31:11 | 192.168.213.86 and 192.168.230.3 | TCP and SSH  |
-| Data Exfiltration over C2 Channel (SSH) | 2       | 13:25:27   | 13:31:11 | 192.168.230.3 and 130.149.98.119 | TCP and SSH  |
-
-## DSFIDS24
+## [DSFIDS24](DSFIDS24/README.md)
 
 This dataset is a live capture of eight extended road-side units (eRSU). The dataset and
 attacks were collected on real infrastructure. It features captures of eight 
@@ -63,113 +39,6 @@ multi-access edge computing (MEC) units in a distributed network. It was capture
 the 22nd of July 2024, starting on the 21st at 20:00 CEST and ending on the 22nd at
 20:00 CEST. The dataset is split into the eight hosts. Each host contains CSV files with
 100.000 packets per file.
-
-### Network Layout
-
-<img src="DSFIDS24/graphics/eRSU.png" alt="drawing" width="400"/>
-
-The graphic above shows the network of a single eRSU. The network features a road-side 
-unit (RSU), which is a vehicle to everything (V2X) communication device used to 
-communicate with vehicles (for autonomous driving) and the internet. The location 
-additionally features sensors, like camera and Lidar sensors and a MEC unit. The 
-internal network uses the 192.168.213.0/22 address space.
-
-<img src="DSFIDS24/graphics/locations.png" alt="drawing" width="400"/>
-
-For the dataset eight eRSUs were used. In the graphic above, the network layout of most
-of the infrastructure is shown. The eRSUs use a VPN (dotted line) to communicate with an
-office network. The IP space for the VPN is 10.1.1.0/24. An additional VPN is present in 
-the dataset, but not used for any attacks. Its IP space is 192.168.100.0/24. The 
-infected machine is the machine used by the adversary to attack the systems initially.
-As the attack scenario progresses, the adversary moves into the network.
-
-### Attacks
-
-The dataset features multiple attacks. They were labeled using the MITRE ATT@CK® Matrix
-in Enterprise Edition in Version 15. Each Label has the following structure:
-
-extra-information:TA0000-T0000;TA0000-T0000
-
-The label can contain any number of TA0000-T0000 pairs separated using semicolon. 
-The TA0000 is the identifier of a tactic in the MITRE ATT@CK Matrix, while the T0000
-is a technique under the tactic. If multiple techniques fall into the same tactic, they 
-can be written as TA0000-T0000-T0000. In some cases extra information is provided to 
-specify the type of attack. This extra information is provided at the start of the 
-label and separated from the tactic-technique pairs using a double point. The exception
-is the label "benign", which denotes the normal traffic. The following labels are 
-present in the dataset. All tactics can be found 
-[here](https://attack.mitre.org/versions/v15/tactics/), all techniques 
-[here](https://attack.mitre.org/versions/v15/techniques/).
-
-| Label                                               | Tactic and Technique                                                                                                      | Description                                                                |
-|-----------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|
-| benign                                              |                                                                                                                           | Benign traffic                                                             |
-| TA0043-T1595                                        | Reconnaissance - Active Scanning                                                                                          | Port Scan from infected machine                                            |
-| SSH-Brute-Force:TA0006-T1110                        | Credential Access - Brute Force                                                                                           | SSH Brute Force                                                            |
-| TA0001-T1078;TA0007-T1083;TA0010-T1041              | Initial Access - Valid Accounts; Discovery - File and Directory Discovery; Exfiltration - Exfiltration Over C2 Channel    | Initial Access to network and commands for searching and exfiltrating data |
-| TA0001-T1078;TA0007-T1083;TA0010-T1041;TA0004-T1078 | Same as the line above; Privilege Escalation - Valid Accounts                                                             | Continuation of above attack with additional privilege escalation          |
-| TA0008-T1021;TA0007-T1083;TA0010-T1041              | Lateral Movement - Remote Services; Discovery - File and Directory Discovery; Exfiltration - Exfiltration over C2 Channel | Commands for searching and exfiltrating data on remote machine             |
-| TA0008-T1021                                        | Lateral Movement - Remote Services                                                                                        | Connection to machines (SSH connections and tunnels)                       |
-| Outgoing-Portscan:TA0007-T1046-T1018                | Discovery - Network Service Discovery - Remote System Discovery                                                           | Port scan executed on this machine                                         |
-| Incoming-Portscan:TA0007-T1046-T1018                | Discovery - Network Service Discovery - Remote System Discovery                                                           | Port scan targeting this machine                                           |
-| Portscan-Tool-Install:TA0042-T1608                  | Resource Development - Stage Capabilities                                                                                 | Installation of port scan tool                                             |
-| Brute-Force-Tool-Install:TA0042-T1608               | Resource Development - Stage Capabilities                                                                                 | Installation of brute force tool                                           |
-| DoS-Tool-Install:TA0042-T1608                       | Resource Development - Stage Capabilities                                                                                 | Installation of Denial of Service tool                                     |
-| TCP-Syn-Flood:TA0040-T1498                          | Impact - Network Denial of Service                                                                                        | TCP SYN Flood DoS attack                                                   |
-| ICMP-Flood:TA0040-T1498                             | Impact - Network Denial of Service                                                                                        | ICMP Flood DoS attack                                                      |
-
-As each packet can contain multiple labels, it is recommended to split the labels by 
-tactic-technique (at the semicolons). Additionally, different labels are used for the
-same attacks, as the labels provide additional context to the attack. The following 
-labels/tactic-technique-pairs should be grouped. 
-
-- Group 1:
-  - TA0043-T1595 
-  - Incoming-Portscan:TA0007-T1046-T1018
-    - Both labels are an incoming portscan. The first label is just used for reconnaissance
-- Group 2:
-  - TA0001-T1078
-  - TA0008-T1021
-    - Both are SSH connections. The first is just the initial connection instead of a following one
-- Group 3:
-  - Portscan-Tool-Install:TA0042-T1608
-  - Brute-Force-Tool-Install:TA0042-T1608
-  - DoS-Tool-Install:TA0042-T1608
-    - These already use the same tactic-technique pair. The traffic is mostly identical and can be considered the same attack
-
-Apart from the attacks port scan, SSH brute force, TCP SYN flood DoS, and ICMP Flood DoS,
-most attack traffic uses SSH. The following table shows every attack in the dataset. All
-times are from the 22nd of July 2024 in CEST timezone.
-
-| Timestamp    | Description                                                                                                                                              |
-|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 02:18:28.045 | Port scan of 10.1.1.0/24 from infected machine                                                                                                           |
-| 03:04:21.449 | SSH Brute Force attack targeting Host-2 from infected machine                                                                                            |
-| 06:37:34.370 | Initial Access to Host-2 using SSH from infected machine. Execution of File and Directory Discovery attack.                                              |
-| 06:38:46.570 | Execution of Exfiltration and Privilege Escalation attacks on Host-2                                                                                     |
-| 07:04:06.157 | SSH connection to Host-2 from infected machine                                                                                                           |
-| 07:04:23.289 | Installation of port scan tool on Host-2                                                                                                                 |
-| 07:07:54.030 | Port scan targeting 192.168.213.0/22 from Host-2                                                                                                         |
-| 07:12:01.437 | Port scan targeting 10.1.1.129/25 from Host-2                                                                                                            |
-| 08:14:08.817 | SSH connection to Host-2 from infected machine                                                                                                           |
-| 08:14:16.229 | Installation of brute force tool on Host-2                                                                                                               |
-| 08:18:23.687 | Download of repository containing password files on Host-2                                                                                               |
-| 08:31:57.365 | Unpacking of repository on Host-2                                                                                                                        |
-| 08:36:04.745 | SSH Brute Force attack targeting Host-4 from Host-2                                                                                                      |
-| 10:09:12.191 | SSH connection to Host-4 using SSH tunnel over Host-2 from the infected machine. Execution of File and Directory Discovery attacks and Data Exfiltration |
-| 10:12:26.063 | Port scan targeting 10.1.1.129/25 from Host-4                                                                                                            |
-| 10:15:32.876 | Port scan targeting 192.168.213.0/22 from Host-4                                                                                                         |
-| 11:58:09.680 | SSH connection to Host-6 using SSH Tunnel over Host-4 and SSH Tunnel over Host-2 from the infected machine                                               |
-| 11:58:31.192 | Port scan targeting 192.168.213.0/22 and 10.1.1.129/25 from Host-6                                                                                       |
-| 12:01:52.706 | Execution of Persistence attack on Host-6                                                                                                                |
-| 14:07:37.220 | SSH connection to Host-3 from infected machine                                                                                                           |
-| 14:07:51.361 | Installation of Denial of Service tool on Host-3                                                                                                         |
-| 14:10:55.141 | TCP SYN Flood DoS attack from Host-3 targeting Host-6                                                                                                    |
-| 16:47:42.489 | SSH connection to Host-5 from intected machine                                                                                                           |
-| 16:48:09.940 | Installation of Denial of Service tool on Host-5                                                                                                         |
-| 16:50:38.078 | ICMP Flood DoS attack from Host-5 targeting Host-4                                                                                                       |
-
-Host-1, Host-7, and Host-8 were never targeted by any attack other than the port scans.
 
 ## Licensing
 
