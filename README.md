@@ -1,5 +1,7 @@
 # Datasets for DAISY
 
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://github.com/daisy-field/datasets/blob/main/LICENSE.txt)
+
 This repository contains several datasets for use with the DAISY framework. 
 
 ## 5G Communication Indicators Dataset (Jamming Dataset)
@@ -168,3 +170,7 @@ times are from the 22nd of July 2024 in CEST timezone.
 | 16:50:38.078 | ICMP Flood DoS attack from Host-5 targeting Host-4                                                                                                       |
 
 Host-1, Host-7, and Host-8 were never targeted by any attack other than the port scans.
+
+## Licensing
+
+The datasets in this repository are licensed under the Creative commons Attribution International Version 4.0 [(CC BY 4.0)](https://github.com/daisy-field/datasets/blob/main/LICENSE.txt)
