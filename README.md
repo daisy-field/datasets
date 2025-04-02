@@ -12,11 +12,10 @@ anomaly- and misuse-based classification.
 This is merely the overview of all the available datasets, for a more detailed 
 description, see the respective directory and README.
 
-## [5G Communication Indicators Dataset (Jamming Dataset)](Jamming/README.md)
+## [5G Jamming Detection Dataset (5G_JDD)](5G_JDD/README.md)
 
 This dataset includes the 5G communication monitoring indicators recorded throughout the 
-project. The data was collected by our project partner HMF, including **DLLA** and **UE 
-Link** data, and then processed and merged for further analysis.
+project. The data was collected by our project partner HMF, and then processed and merged for further analysis.
 
 ## [CIC IDS2017](CIC_IDS2017/README.md)
 
