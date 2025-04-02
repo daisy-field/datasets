@@ -173,4 +173,5 @@ Host-1, Host-7, and Host-8 were never targeted by any attack other than the port
 
 ## Licensing
 
-The datasets in this repository are licensed under the Creative commons Attribution International Version 4.0 [(CC BY 4.0)](https://github.com/daisy-field/datasets/blob/main/LICENSE.txt)
+The datasets in this repository, except of the CIC IDS2017, are licensed under the 
+Creative commons Attribution International Version 4.0 [(CC BY 4.0)](https://github.com/daisy-field/datasets/blob/main/LICENSE.txt)
