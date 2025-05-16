@@ -19,6 +19,12 @@ This dataset includes the 5G communication monitoring indicators recorded throug
 5. **`merged_data_preprocessed_only_one_label_extended.csv`**:  
    - This version includes repeated records of normal traffic (10x) to simulate additional training data, thus extending the set of training examples for improved analysis.
 
+6. **`merged_data_preprocessed_only_one_lable_extended_mini.csv`**:  
+   - This version is balanced and includes the same amount of normal and abnormal data. It is a subset of merged_data_preprocessed_only_one_label_extended that includes all abnormal data.
+
+7. **`merged_data_preprocessed_only_one_lable_extended_shuffeled.csv`**:  
+   - This version includes the same data as merged_data_preprocessed_only_one_label_extended, but the rows have been shuffled.
+
 ## Further Notes:
 
 - All files have been carefully prepared to ensure easy handling and analysis of the 5G communication data.
