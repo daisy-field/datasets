@@ -1,28 +1,19 @@
 # 5G Jamming Detection Dataset (5G_JDD)
 
-This dataset includes the 5G communication monitoring indicators recorded throughout the project. The data was collected by our project partner HMF, and then processed and merged for further analysis.
+This folder contains the 5G communication monitoring indicators that were recorded throughout the project. 
 
-## Available Data:
+## Available Folders:
 
-1. **`label_encoder.pkl`**:  
-   - The serialized encoder for the labels. This file is used to convert categorical labels into numerical values.
+1. **`laboratory_data_shieldingobx`**:  
+   - The data in the laboratory_data_shieldingobx folder was collected by our project partner HMF and then processed and merged for further analysis. The smartphone was placed in a shielding box and connected to the system with an attenuator via an air interface. 
 
 2. **`merged_data.csv`**:  
-   - The raw merged dataset. This is the initial dataset obtained after merging.
-
-3. **`merged_data_preprocessed.csv`**:  
-   - The preprocessed dataset, excluding data scaling. This version of the data has been cleaned and prepared, but the values have not been normalized or scaled.
-
-4. **`merged_data_preprocessed_only_one_label.csv`**:  
-   - A version of the dataset that contains only the label `Jammer_On`. Other attributes such as bandwidth, frequency, and signal strength are excluded. This file is created for specific analyses where only this label is relevant.
-
-5. **`merged_data_preprocessed_only_one_label_extended.csv`**:  
-   - This version includes repeated records of normal traffic (10x) to simulate additional training data, thus extending the set of training examples for improved analysis.
+   - The data in the real_laboratory_test_field folder was recorded in TU Berlin's own test field at the DAI laboratory. The Smatthone was connected to a 5G indoor unit via 5G and pinged this base station. Speed tests were also carried out to generate some traffics.
 
 ## Further Notes:
 
 - All files have been carefully prepared to ensure easy handling and analysis of the 5G communication data.
-- The dataset can be utilized for various tasks within 5G communication monitoring and analysis, such as detecting disturbances (e.g., jamming) or modeling network behavior.
+- The datasets can be utilized for various tasks within 5G communication monitoring and analysis, such as detecting disturbances (e.g., jamming) or modeling network behavior.
 
 ## Licensing
 
