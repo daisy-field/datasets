@@ -12,7 +12,7 @@ anomaly- and misuse-based classification.
 This is merely the overview of all the available datasets, for a more detailed 
 description, see the respective directory and README.
 
-## [5G Jamming Detection Dataset (5G_JDD)](5G_JDD/README.md)
+## [5G Jamming Detection Dataset (5G_JDD)](5G_JDD/laboratory_data_shieldingobx/README.md)
 
 This dataset includes the 5G communication monitoring indicators recorded throughout the 
 project. The data was collected by our project partner HMF, and then processed and merged for further analysis.
